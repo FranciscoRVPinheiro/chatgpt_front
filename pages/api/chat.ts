@@ -13,7 +13,7 @@ const firstMessge = initialMessages[0].message
 
 // @TODO: unit test this. good case for unit testing
 const generatePromptFromMessages = (messages: Message[]) => {
-  console.log('== INITIAL messages ==', messages)
+  // console.log('== INITIAL messages ==', messages)
 
   let prompt = ''
 
