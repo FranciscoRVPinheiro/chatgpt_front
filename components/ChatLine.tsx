@@ -49,7 +49,7 @@ export function ChatLine({ who = 'bot', message }: Message) {
   return (
     <div
       className={
-        who != 'bot' ? 'float-right clear-both' : 'float-left clear-both'
+        who != "bot" ? "float-right clear-both" : "float-left clear-both"
       }
     >
       <BalancerWrapper>
@@ -58,13 +58,15 @@ export function ChatLine({ who = 'bot', message }: Message) {
             <div className="flex-1 gap-4">
               <p className="font-large text-xxl text-gray-900">
                 <a href="#" className="hover:underline">
-                  {who == 'bot' ? 'AI' : 'You'}
+                  {who == "bot" ? "Ai" : "Me"}
                 </a>
               </p>
               <p
                 className={clsx(
-                  'text ',
-                  who == 'bot' ? 'font-semibold font- ' : 'text-gray-400'
+                  "text ",
+                  who == "bot"
+                    ? "font-semibold font- "
+                    : "text-indigo-700 font-semibold "
                 )}
               >
                 {formatteMessage}
@@ -74,5 +76,5 @@ export function ChatLine({ who = 'bot', message }: Message) {
         </div>
       </BalancerWrapper>
     </div>
-  )
+  );
 }
