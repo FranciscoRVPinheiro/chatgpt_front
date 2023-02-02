@@ -1,6 +1,7 @@
 import clsx from 'clsx'
 import Balancer from 'react-wrap-balancer'
 
+
 // wrap Balancer to remove type errors :( - @TODO - fix this ugly hack
 const BalancerWrapper = (props: any) => <Balancer {...props} />
 
@@ -53,18 +54,17 @@ export function ChatLine({ who = 'bot', message }: Message) {
       }
     >
       <BalancerWrapper>
-        <div className="float-right mb-5 rounded-lg bg-white p-2 shadow-lg ring-1 ring-zinc-100 sm:px-6">
+        <div className="float-right mb-20 rounded-lg bg-white p-2 shadow-lg ring-1 ring-zinc-100 sm:px-6"
+        >
           <div className="flex space-x-3">
             <div className="flex-1 gap-4">
-              <p className="font-large text-xxl text-gray-900 font-mono">
-                <a href="#" className="hover:underline">
-                  {who == "bot" ? "Ai" : "Me"}
-                </a>
+              <p className="font-large text-xxl text-slate-400 font-mono">
+                {who == "bot" ? "Ai" : "Me"}
               </p>
               <p
                 className={clsx(
                   "text ",
-                  who == "bot" ? "font-mono" : "text-indigo-700 font-mono"
+                  who == "bot" ? "font-mono" : "font-mono"
                 )}
               >
                 {formatteMessage}

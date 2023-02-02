@@ -18,7 +18,7 @@ const InputMessage = ({ input, setInput, sendMessage }: any) => (
       type="text"
       aria-label="chat input"
       required
-      className="min-w-0 flex-auto appearance-none rounded-md border border-zinc-900/10 bg-white px-3 py-[calc(theme(spacing.2)-1px)] shadow-md shadow-zinc-800/5 placeholder:text-zinc-400 focus:border-indigo-700 focus:outline-none focus:ring-4 focus:ring-teal-500/10 sm:text-sm"
+      className="w-full flex-auto appearance-none rounded-md border border-zinc-900/10 bg-white px-3 py-[calc(theme(spacing.2)-1px)] shadow-md shadow-zinc-800/5 placeholder:text-white focus:border-indigo-700 focus:outline-none focus:ring-4 focus:ring-teal-500/10 sm:text-sm"
       value={input}
       onKeyDown={(e) => {
         if (e.key === "Enter") {
@@ -91,14 +91,14 @@ export function Chat() {
 
   return (
     <>
-      <div className="rounded-2xl p-6 bg-slate-900 ">
+      <div className="rounded-2xl p-6 bg-slate-900">
         {messages.map(({ message, who }, index) => (
           <ChatLine key={index} who={who} message={message} />
         ))}
 
         {loading && <LoadingChatLine />}
       </div>
-      <div className='p-6' >
+      <div className=" p-6 fixed bottom-0 left-1/2 -translate-x-1/2 w-full">
         <InputMessage
           input={input}
           setInput={setInput}

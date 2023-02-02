@@ -11,8 +11,8 @@ export default function App({
   return (
     <>
       <SessionProvider session={session}>
-      <Navbar />
-      <Component {...pageProps} />
+        <Navbar />
+        <Component {...pageProps} />
       </SessionProvider>
     </>
   );
