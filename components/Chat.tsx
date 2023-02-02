@@ -90,25 +90,21 @@ export function Chat() {
   }
 
   return (
-
+    <>
       <div className="rounded-2xl p-6 bg-slate-900 ">
         {messages.map(({ message, who }, index) => (
           <ChatLine key={index} who={who} message={message} />
         ))}
 
         {loading && <LoadingChatLine />}
-        {/* 
-      {messages.length < 2 && (
-        <span className="mx-auto flex flex-grow text-gray-600 clear-both">
-          Type Something
-        </span>
-      )} */}
+      </div>
+      <div className='p-6' >
         <InputMessage
           input={input}
           setInput={setInput}
           sendMessage={sendMessage}
         />
       </div>
-
+    </>
   );
 }
