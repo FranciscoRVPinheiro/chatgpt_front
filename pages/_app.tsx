@@ -6,15 +6,15 @@ import '@vercel/examples-ui/globals.css'
 
 export default function App({ 
   Component, 
-  pageProps: {   session, ...pageProps } }: AppProps) {
+  pageProps: { session, ...pageProps } }: AppProps) {
 
   return (
-
+    <>
       <SessionProvider session={session}>
-        <Navbar />
-        <Component {...pageProps} />
+      <Navbar />
+      <Component {...pageProps} />
       </SessionProvider>
-
+    </>
   );
 }
 
