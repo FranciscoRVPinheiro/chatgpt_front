@@ -12,23 +12,8 @@ export type Message = {
 
 // loading placeholder animation for the chat line
 export const LoadingChatLine = () => (
-  <div className="flex min-w-full animate-pulse px-4 py-5 sm:px-6">
-    <div className="flex flex-grow space-x-3">
-      <div className="min-w-0 flex-1">
-        <p className="font-large text-xxl text-gray-900">
-          <a href="#" className="hover:underline">
-            AI
-          </a>
-        </p>
-        <div className="space-y-4 pt-4">
-          <div className="grid grid-cols-3 gap-4">
-            <div className="col-span-2 h-2 rounded bg-zinc-500"></div>
-            <div className="col-span-1 h-2 rounded bg-zinc-500"></div>
-          </div>
-          <div className="h-2 rounded bg-zinc-500"></div>
-        </div>
-      </div>
-    </div>
+  <div className="flex min-w-full animate-pulse px-4 mb-28">
+    <div className='text-white'>Thinking...</div>
   </div>
 )
 
@@ -54,7 +39,7 @@ export function ChatLine({ who = 'bot', message }: Message) {
       }
     >
       <BalancerWrapper>
-        <div className="float-right mb-28 rounded-lg bg-indigo-600 p-2 shadow-lg ring-1 ring-zinc-100 sm:px-6">
+        <div className="float-right mb-28 rounded-lg bg-indigo-600 p-2 shadow-lg ring-1 sm:px-6">
           <div className="flex space-x-3">
             <div className="flex-1 gap-4">
               <p className="font-large text-xxl text-slate-400 font-mono">

@@ -51,8 +51,8 @@ export function Chat() {
   const [cookie, setCookie] = useCookies([COOKIE_NAME]);
 
   const containerRef = useRef(null);
-  //
-  useLayoutEffect(() => {
+  // scroll to bottom every new msg.
+  useEffect(() => {
     if (containerRef.current) {
       containerRef.current.scrollTop = containerRef.current.scrollHeight;
     }
@@ -109,6 +109,7 @@ export function Chat() {
         ))}
 
         {loading && <LoadingChatLine />}
+        
       </div>
       <div className=" px-6 pb-3 fixed bottom-0 left-1/2 -translate-x-1/2 w-full">
         <InputMessage
