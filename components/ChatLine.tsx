@@ -30,25 +30,27 @@ export function ChatLine({ who = 'bot', message }: Message) {
   const formatteMessage = convertNewLines(message)
 
   return (
-    <div
-      className={
-        who != "bot" ? "float-right clear-both" : "float-left clear-both"
-      }
-    >
-      <BalancerWrapper>
-        <div className="float-right mb-10 rounded-lg bg-indigo-600 p-2 shadow-lg ring-1 sm:px-6">
-          <div className="flex space-x-3">
-            <div className="flex-1 gap-4">
-              <p className="font-large text-sm text-slate-300 font-mono">
-                {who == "bot" ? "Jarvis" : "Me"}
-              </p>
-              <p className="text-white text-lg font-mono">
-                {formatteMessage}
-              </p>
+    <>
+      <div
+        className={
+          who != "bot" ? "float-right clear-both" : "float-left clear-both"
+        }
+      >
+        <BalancerWrapper>
+          <div className="float-right mb-28 rounded-lg bg-indigo-600 p-2 shadow-lg ring-1 sm:px-6">
+            <div className="flex space-x-3">
+              <div className="flex-1 gap-4">
+                <p className="font-large text-sm text-slate-300 font-mono">
+                  {who == "bot" ? "Jarvis" : "Me"}
+                </p>
+                <p className="text-white text-lg font-mono">
+                  {formatteMessage}
+                </p>
+              </div>
             </div>
           </div>
-        </div>
-      </BalancerWrapper>
-    </div>
+        </BalancerWrapper>
+      </div>
+    </>
   );
 }
