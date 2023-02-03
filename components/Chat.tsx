@@ -1,5 +1,5 @@
 // @ts-nocheck
-import { useEffect, useState, useLayoutEffect, useRef } from "react";
+import { useEffect, useState, useRef } from "react";
 import { Button } from "./Button";
 import { type Message, ChatLine, LoadingChatLine } from "./ChatLine";
 import { useCookies } from "react-cookie";
@@ -9,7 +9,7 @@ const COOKIE_NAME = "nextjs-ai-chat-gpt3";
 export const initialMessages: Message[] = [
   {
     who: "bot",
-    message: "Hi! How can I help you?",
+    message: "(☞ﾟヮﾟ)☞",
   },
 ];
 

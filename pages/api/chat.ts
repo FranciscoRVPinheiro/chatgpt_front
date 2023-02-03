@@ -4,7 +4,7 @@ import { initialMessages } from "../../components/Chat";
 import { type Message } from "../../components/ChatLine";
 
 const botName = "Jarvis";
-const userName = "Questioner"; // TODO: move to ENV var
+const userName = "Questioner";
 const firstMessge = initialMessages[0].message;
 
 const generatePromptFromMessages = (messages: Message[]) => {
