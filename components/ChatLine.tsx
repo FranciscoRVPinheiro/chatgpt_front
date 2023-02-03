@@ -54,16 +54,15 @@ export function ChatLine({ who = 'bot', message }: Message) {
       }
     >
       <BalancerWrapper>
-        <div className="float-right mb-32 rounded-lg bg-white p-2 shadow-lg ring-1 ring-zinc-100 sm:px-6"
-        >
+        <div className="float-right mb-28 rounded-lg bg-indigo-600 p-2 shadow-lg ring-1 ring-zinc-100 sm:px-6">
           <div className="flex space-x-3">
             <div className="flex-1 gap-4">
               <p className="font-large text-xxl text-slate-400 font-mono">
-                {who == "bot" ? "Ai" : "Me"}
+                {who == "bot" ? "Jarvis" : "Me"}
               </p>
               <p
                 className={clsx(
-                  "text ",
+                  "text-white",
                   who == "bot" ? "font-mono" : "font-mono"
                 )}
               >

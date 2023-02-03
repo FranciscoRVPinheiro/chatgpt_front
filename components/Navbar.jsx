@@ -10,7 +10,7 @@ export default function Navbar() {
     <Link
       onClick={() => signOut()}
       href="/"
-      className="text-white font-extrabold font-mono flex pt-6 justify-center mr-6"
+      className="text-white font-extrabold font-mono flex pt-6 justify-center mr-4"
     >
       Logout
     </Link>
@@ -28,7 +28,7 @@ export default function Navbar() {
 
     return (
       <>
-        <nav className=" flex justify-between bg-slate-800 sticky top-0 pb-3">
+        <nav className=" flex justify-between bg-neutral-900 sticky top-0 pb-3">
           <div className=" pt-2 justify-center ">
             <h1 className="text-2xl text-white text-center font-mono font-bold ml-5 ">
               Jarvis
