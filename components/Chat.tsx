@@ -110,23 +110,23 @@ export function Chat() {
  
   return (
     <>
-      <div
-        ref={containerRef}
-        className="rounded-2xl p-6 bg-neutral-900 max-h-full overflow-y-auto"
-      >
-        {messages.map(({ message, who }, index) => (
-          <ChatLine key={index} who={who} message={message} />
-        ))}
+        <div
+          ref={containerRef}
+          className="rounded-2xl p-6 bg-neutral-900 max-h-full overflow-y-auto mb-32"
+        >
+          {messages.map(({ message, who }, index) => (
+            <ChatLine key={index} who={who} message={message} />
+          ))}
 
-        {loading && <LoadingChatLine />}
-      </div>
-      <div className="px-6 pb-3 fixed bottom-0 left-1/2 -translate-x-1/2 w-full">
-        <InputMessage
-          input={input}
-          setInput={setInput}
-          sendMessage={sendMessage}
-        />
-      </div>
+          {loading && <LoadingChatLine />}
+        </div>
+        <div className="px-6 pb-3 fixed bottom-0 left-1/2 -translate-x-1/2 w-full">
+          <InputMessage
+            input={input}
+            setInput={setInput}
+            sendMessage={sendMessage}
+          />
+        </div>
     </>
   );
 }
