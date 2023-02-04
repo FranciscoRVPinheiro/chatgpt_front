@@ -13,9 +13,20 @@ export const initialMessages: Message[] = [
   },
 ];
 
-const InputMessage = ({ input, setInput, sendMessage }: any) => (
+const InputMessage = ({ input, setInput, sendMessage }: any) => {
+  
+   const textInput = useRef(null);
+
+   useEffect(() => {
+     if (textInput.current) {
+       textInput.current.focus();
+     }
+   }, []);
+
+  return(
   <div className="mt-6 flex clear-both">
     <input
+      ref={textInput}
       type="text"
       aria-label="chat input"
       required
@@ -41,8 +52,7 @@ const InputMessage = ({ input, setInput, sendMessage }: any) => (
     >
       Send
     </Button>
-  </div>
-);
+  </div>)}
 
 export function Chat() {
   const [messages, setMessages] = useState<Message[]>(initialMessages);
