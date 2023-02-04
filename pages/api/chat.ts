@@ -30,7 +30,7 @@ function generatePromptFromMessages(messages: Message[]) {
 
 export const config = {
   runtime: "edge",
-  unstable_allowDynamic: ["../../node_modules/@babel/runtime/regenerator/index.js"],
+  unstable_allowDynamic: ["/node_modules/function-bind/**"],
 };
 
 export default async function handler(req: NextRequest) {
