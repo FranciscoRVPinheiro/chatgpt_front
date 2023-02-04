@@ -30,6 +30,9 @@ function generatePromptFromMessages(messages: Message[]) {
 
 export const config = {
   runtime: "edge",
+  unstable_allowDynamic: [
+    './chat.ts'
+  ]
 };
 
 export default async function handler(req: NextRequest) {
