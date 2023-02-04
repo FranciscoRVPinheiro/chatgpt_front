@@ -24,7 +24,7 @@ export default function Navbar() {
 
     return (
       <>
-        <nav className="flex justify-between bg-neutral-900 sticky top-0 pb-3">
+        <nav className="flex justify-between bg-neutral-900 fixed top-0 pb-3 w-full">
           <div className="pt-2 justify-center ">
             <h1 className="text-2xl text-white text-center font-mono font-bold ml-5 ">
               Jarvis
