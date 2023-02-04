@@ -4,7 +4,7 @@ import { initialMessages } from "../../components/Chat";
 import { type Message } from "../../components/ChatLine";
 
 const botName = "Jarvis";
-// const userName  
+const userName = "Questioner"
 const firstMessge = initialMessages[0].message;
 
 function generatePromptFromMessages(messages: Message[]) {
@@ -30,15 +30,10 @@ function generatePromptFromMessages(messages: Message[]) {
 
 export const config = {
   runtime: "edge",
-  unstable_allowDynamic: ["../../node_modules/function-bind/**"],
 };
 
 export default async function handler(req: NextRequest) {
   const body = await req.json();
-
-  // received session info from frontend.
-  //console.log(body.session.user.name)
-  global.userName = body.session ? body.session.user.name : "Questioner"
 
   const messagesPrompt = generatePromptFromMessages(body.messages);
 
