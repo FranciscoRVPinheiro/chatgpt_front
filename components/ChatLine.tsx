@@ -37,15 +37,13 @@ export function ChatLine({ who = 'bot', message }: Message) {
         }
       >
         <BalancerWrapper>
-          <div className="float-right mb-28 rounded-lg bg-indigo-600 p-2 shadow-lg ring-1 sm:px-6">
-            <div className="flex space-x-3">
+          <div className="float-right mb-28 rounded-lg p-2 ring-1 ring-indigo-600 sm:px-6">
+            <div className="flex space-x-5">
               <div className="flex-1 gap-4">
-                <p className="font-large text-sm text-slate-300 font-mono">
+                <p className="text-sm text-slate-300 font-mono">
                   {who == "bot" ? "Jarvis" : "Me"}
                 </p>
-                <p
-                  className="text-white text-lg font-mono"
-                >
+                <p className="text-white text-lg font-mono">
                   {formatteMessage}
                 </p>
               </div>

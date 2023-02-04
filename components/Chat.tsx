@@ -107,7 +107,7 @@ export function Chat() {
     ]);
     setLoading(false);
   };
-
+ 
   return (
     <>
       <div
@@ -120,14 +120,13 @@ export function Chat() {
 
         {loading && <LoadingChatLine />}
       </div>
-      <div className=" px-6 pb-3 fixed bottom-0 left-1/2 -translate-x-1/2 w-full">
+      <div className="px-6 pb-3 fixed bottom-0 left-1/2 -translate-x-1/2 w-full">
         <InputMessage
           input={input}
           setInput={setInput}
           sendMessage={sendMessage}
         />
       </div>
-
     </>
   );
 }
