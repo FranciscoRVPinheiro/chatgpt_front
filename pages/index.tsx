@@ -8,8 +8,7 @@ export default function Home() {
       <Head />
       <div className=" bg-neutral-900 justify-center flex flex-col h-screen">
         <div className="max-h-full overflow-y-auto">
-          <Chat />
-
+            <Chat />
         </div>
       </div>
     </>

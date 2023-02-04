@@ -1,5 +1,5 @@
 // @ts-nocheck
-import { type NextRequest, NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import { initialMessages } from "../../components/Chat";
 import { type Message } from "../../components/ChatLine";
 

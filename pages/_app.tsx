@@ -11,10 +11,11 @@ export default function App({
 
   return (
     <>
-      <SessionProvider session={session}>
-        <Navbar />
-        <Component {...pageProps} />
-      </SessionProvider>
+        <SessionProvider session={session}>
+          <Navbar />
+          <Component {...pageProps} />
+        </SessionProvider>
+
     </>
   );
 }

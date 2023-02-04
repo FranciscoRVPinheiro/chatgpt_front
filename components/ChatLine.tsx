@@ -43,7 +43,9 @@ export function ChatLine({ who = 'bot', message }: Message) {
                 <p className="font-large text-sm text-slate-300 font-mono">
                   {who == "bot" ? "Jarvis" : "Me"}
                 </p>
-                <p className="text-white text-lg font-mono">
+                <p
+                  className="text-white text-lg font-mono"
+                >
                   {formatteMessage}
                 </p>
               </div>

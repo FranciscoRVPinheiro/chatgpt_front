@@ -6,25 +6,21 @@ export default function Navbar() {
 
   const { data: session } = useSession();
 
-  let logged = (
-    <Link
-      onClick={() => signOut()}
-      href="/"
-      className="text-white font-extrabold font-mono flex pt-6 justify-center mr-4"
-    >
-      Logout
-    </Link>
-  );
-
-  let notLogged = (
-    <Link
-      onClick={() => signIn()}
-      href="/"
-      className="text-white font-extrabold font-mono flex pt-6 justify-center mr-6"
-    >
-      Login
-    </Link>
-  );
+    let logged = session ?
+      <Link
+        onClick={() => signOut()}
+        href="/"
+        className="text-white font-extrabold font-mono flex pt-6 justify-center mr-4"
+      >
+        Logout
+      </Link> :
+      <Link
+        onClick={() => signIn()}
+        href="/"
+        className="text-white font-extrabold font-mono flex pt-6 justify-center mr-6"
+      >
+        Login
+      </Link>
 
     return (
       <>
@@ -38,7 +34,7 @@ export default function Navbar() {
             </p>
           </div>
           <div className="flex">
-            <div>{session ? logged : notLogged}</div>
+            {logged}
             <div className="mr-4 mt-6">
               {session ? (
                 <Image
