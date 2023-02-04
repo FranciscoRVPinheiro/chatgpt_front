@@ -6,6 +6,9 @@ export default function IndexPage() {
       <Head>
         <title>Jarvis</title>
       </Head>
+      <Head>
+        <meta name="description" content="A chatgpt3 front. Made with Nextjs and Tailwind." />
+      </Head>
     </div>
-  )
+  );
 }
