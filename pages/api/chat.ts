@@ -4,7 +4,7 @@ import { initialMessages } from "../../components/Chat";
 import { type Message } from "../../components/ChatLine";
 
 const botName = "Jarvis";
-// userName is a global variable coming from function handler
+const userName = "Questioner"
 const firstMessge = initialMessages[0].message;
 
 function generatePromptFromMessages(messages: Message[]) {
@@ -35,8 +35,6 @@ export const config = {
 export default async function handler(req: NextRequest) {
 
   const body = await req.json();
-
-  global.userName = body.session ? body.session.user.name : "Questioner"
 
   const messagesPrompt = generatePromptFromMessages(body.messages);
 
