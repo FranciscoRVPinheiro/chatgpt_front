@@ -4,10 +4,10 @@ import { initialMessages } from "../../components/Chat";
 import { type Message } from "../../components/ChatLine";
 
 const botName = "Jarvis";
-const userName = "Questioner";
+// const userName  
 const firstMessge = initialMessages[0].message;
 
-const generatePromptFromMessages = (messages: Message[]) => {
+function generatePromptFromMessages(messages: Message[]) {
   let prompt = "";
 
   // add first user message to prompt
@@ -35,7 +35,12 @@ export const config = {
 export default async function handler(req: NextRequest) {
   const body = await req.json();
 
+  // received session info from frontend.
+  //console.log(body.session.user.name)
+  global.userName = body.session ? body.session.user.name : "Questioner"
+
   const messagesPrompt = generatePromptFromMessages(body.messages);
+
   const defaultPrompt = `I am Friendly AI Assistant. \n\nThis is the conversation between AI Bot and a news reporter.\n\n${botName}: ${firstMessge}\n${userName}: ${messagesPrompt}\n${botName}: `;
   const finalPrompt = process.env.AI_PROMPT
     ? `${process.env.AI_PROMPT}${messagesPrompt}\n${botName}: `

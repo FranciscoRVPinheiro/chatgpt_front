@@ -4,6 +4,9 @@ import { Button } from "./Button";
 import { type Message, ChatLine, LoadingChatLine } from "./ChatLine";
 import { useCookies } from "react-cookie";
 
+import { useSession } from "next-auth/react";
+
+
 const COOKIE_NAME = "nextjs-ai-chat-gpt3";
 
 export const initialMessages: Message[] = [
@@ -60,6 +63,8 @@ export function Chat() {
   const [loading, setLoading] = useState(false);
   const [cookie, setCookie] = useCookies([COOKIE_NAME]);
 
+  const { data: session } = useSession();
+
   const containerRef = useRef(null);
   // scroll to bottom every new msg.
   useEffect(() => {
@@ -94,6 +99,8 @@ export function Chat() {
       body: JSON.stringify({
         messages: last10messages,
         user: cookie[COOKIE_NAME],
+        //send session to backend
+        session: session
       }),
     });
     const data = await response.json();
