@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { Chat } from "../components/Chat";
 import Head from "../components/Head";
 

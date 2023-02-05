@@ -9,30 +9,23 @@ export type Message = {
   message?: string;
 };
 
-export const LoadingChatLine = () => (
-  <div className="flex min-w-full animate-pulse px-1 mb-10">
-    <div className="text-white font-mono">Thinking...</div>
-  </div>
-);
-
-// util helper to convert new lines to <br /> tags
-const convertNewLines = (text: string) =>
-  text.split("\n").map((line, i) => (
-    <span key={i}>
-      {line}
-      <br />
-    </span>
-  ));
-
-export function ChatLine({ who = "bot", message}: Message) {
-
-  const mySelf = 'Me'
+export function ChatLine({ who = "bot", message }: Message) {
 
   if (!message) {
     return null;
   }
 
+  // util helper to convert new lines to <br /> tags
+  const convertNewLines = (text: string) =>
+    text.split("\n").map((line, i) => (
+      <span key={i}>
+        {line}
+        <br />
+      </span>
+    ));
+
   const formatteMessage = convertNewLines(message);
+  const mySelf = "Me";
 
   return (
     <>

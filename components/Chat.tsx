@@ -1,7 +1,8 @@
 // @ts-nocheck
 import { useEffect, useState, useRef } from "react";
 import { Button } from "./Button";
-import { type Message, ChatLine, LoadingChatLine } from "./ChatLine";
+import { type Message, ChatLine } from "./ChatLine";
+import LoadingChatLine from "./LoadingChatLine";
 import { useCookies } from "react-cookie";
 
 const COOKIE_NAME = "nextjs-ai-chat-gpt3";
@@ -112,7 +113,7 @@ export function Chat() {
     ]);
     setLoading(false);
   };
- 
+
   return (
     <>
       <div
@@ -120,7 +121,11 @@ export function Chat() {
         className="rounded-2xl p-6 bg-neutral-900 max-h-full overflow-y-auto"
       >
         {messages.map(({ message, who }, index) => (
-          <ChatLine key={index} who={who} message={message} />
+          <ChatLine
+            key={index}
+            who={who}
+            message={message}
+          />
         ))}
 
         {loading && <LoadingChatLine />}
