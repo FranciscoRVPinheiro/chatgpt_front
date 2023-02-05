@@ -29,19 +29,10 @@ const convertNewLines = (text: string) =>
 
 export function ChatLine({ who = "bot", message }: Message) {
 
-  const { data: newSession } = useSession();
-
-  let mySelf;
-
-  if (newSession) {
-    mySelf = newSession.user.name;
-  } else {
-    mySelf = "Me";
-  }
-
   if (!message) {
     return null;
   }
+
   const formatteMessage = convertNewLines(message);
 
   return (
@@ -56,7 +47,7 @@ export function ChatLine({ who = "bot", message }: Message) {
             <div className="flex space-x-5">
               <div className="flex-1 gap-4">
                 <p className="text-sm text-slate-300 font-mono">
-                  {who == "bot" ? "Jarvis" : mySelf }
+                  {who == "bot" ? "Jarvis" : "Me" }
                 </p>
                 <p className="text-white text-lg font-mono">
                   {formatteMessage}
