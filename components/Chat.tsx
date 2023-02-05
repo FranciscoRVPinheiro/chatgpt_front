@@ -37,8 +37,10 @@ const InputMessage = ({ input, setInput, sendMessage }: any) => {
         value={input}
         onKeyDown={(e) => {
           if (e.key === "Enter") {
+            if (input.trim().length > 0) {
             sendMessage(input);
             setInput("");
+            }
           }
         }}
         onChange={(e) => {
@@ -50,8 +52,10 @@ const InputMessage = ({ input, setInput, sendMessage }: any) => {
           disabled={isDisabled}
           className="ml-4 flex-none font-mono"
           onClick={() => {
-            sendMessage(input);
-            setInput("");
+             if (input.trim().length > 0) { 
+              sendMessage(input);
+              setInput("");
+             }
           }}
         >
           Send
@@ -61,6 +65,7 @@ const InputMessage = ({ input, setInput, sendMessage }: any) => {
   );}
 
 export function Chat() {
+
   const [messages, setMessages] = useState<Message[]>(initialMessages);
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);

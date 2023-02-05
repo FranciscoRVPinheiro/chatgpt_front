@@ -4,6 +4,7 @@ import Balancer from "react-wrap-balancer";
 // wrap Balancer to remove type errors :( - @TODO - fix this ugly hack
 const BalancerWrapper = (props: any) => <Balancer {...props} />;
 
+
 export type Message = {
   who: "bot" | "user" | undefined;
   message?: string;
@@ -13,7 +14,9 @@ export function ChatLine({ who = "bot", message }: Message) {
 
   if (!message) {
     return null;
-  }
+    }
+
+  let mySelf = "Me";
 
   // util helper to convert new lines to <br /> tags
   const convertNewLines = (text: string) =>
@@ -25,7 +28,6 @@ export function ChatLine({ who = "bot", message }: Message) {
     ));
 
   const formatteMessage = convertNewLines(message);
-  const mySelf = "Me";
 
   return (
     <>
