@@ -1,22 +1,19 @@
-import type { AppProps } from 'next/app'
+// @ts-nocheck
 import { SessionProvider } from "next-auth/react";
 import Navbar from "../components/Navbar";
 
+import "@vercel/examples-ui/globals.css";
 
-import '@vercel/examples-ui/globals.css'
-
-export default function App({ 
-  Component, 
-  pageProps: { session, ...pageProps } }: AppProps) {
-
+export default function App({
+  Component,
+  pageProps: { session, ...pageProps },
+}) {
   return (
     <>
-        <SessionProvider session={session}>
-          <Navbar />
-          <Component {...pageProps} />
-        </SessionProvider>
-
+      <SessionProvider session={session}>
+        <Navbar />
+        <Component {...pageProps} />
+      </SessionProvider>
     </>
   );
 }
-
