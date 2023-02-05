@@ -27,11 +27,11 @@ export default function Navbar() {
     return (
       <>
         <nav className="flex justify-between bg-neutral-900 fixed top-0 pb-3 w-full">
-          <div className="pt-4 justify-center ">
+          <div className="mt-4 justify-center ">
             <h1 className="text-2xl text-white text-left font-mono font-bold ml-6">
               Jarvis
             </h1>
-            <p className="text-white text-center font-mono text-sm ml-6">
+            <p className="text-white text-center font-mono text-xs ml-6">
               Powered by ChatGPT-3
             </p>
           </div>
@@ -42,7 +42,7 @@ export default function Navbar() {
                 <Image
                   width="25"
                   height="25"
-                  className="rounded-full border border-blue-600"
+                  className="rounded border border-white"
                   src={session?.user?.image}
                   alt="Google Avatar"
                 />
