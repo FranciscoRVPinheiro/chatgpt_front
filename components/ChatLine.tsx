@@ -1,9 +1,5 @@
 // @ts-nocheck
 import Balancer from "react-wrap-balancer";
-import { useSession } from "next-auth/react";
-import { getServerSession } from "next-auth";
-
-
 
 // wrap Balancer to remove type errors :( - @TODO - fix this ugly hack
 const BalancerWrapper = (props: any) => <Balancer {...props} />;
@@ -49,8 +45,14 @@ export function ChatLine({ who = "bot", message}: Message) {
           <div className="float-right mb-10 rounded-lg p-2 ring-1 ring-indigo-600 sm:px-6">
             <div className="flex space-x-5">
               <div className="flex-1 gap-4">
-                <p className="text-sm text-slate-300 font-mono">
-                  {who == "bot" ? "Jarvis" : mySelf }
+                <p
+                  className={
+                    who == "bot"
+                      ? "text-sm text-slate-300 font-mono flex justify-start"
+                      : "text-sm text-slate-300 font-mono flex justify-end"
+                  }
+                >
+                  {who == "bot" ? "Jarvis" : mySelf}
                 </p>
                 <p className="text-white text-lg font-mono">
                   {formatteMessage}
