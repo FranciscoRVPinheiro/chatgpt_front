@@ -10,14 +10,14 @@ export default function Navbar() {
       <Link
         onClick={() => signOut()}
         href="/"
-        className="text-white font-extrabold font-mono flex pt-6 justify-center mr-4"
+        className="text-white font-mono flex pt-6 justify-center mr-3"
       >
         Logout
       </Link> :
       <Link
         onClick={() => signIn()}
         href="/"
-        className="text-white font-extrabold font-mono flex pt-6 justify-center mr-6"
+        className="text-white font-mono flex pt-6 justify-center mr-6"
       >
         Login
       </Link>
