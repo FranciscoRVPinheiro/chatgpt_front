@@ -28,15 +28,9 @@ const convertNewLines = (text: string) =>
     </span>
   ));
 
-export function ChatLine({ who = "bot", message, session }: Message) {
+export function ChatLine({ who = "bot", message}: Message) {
 
-  let mySelf;
-
-  if (session) {
-    mySelf = session.user.name
-  }else{
-    mySelf = "Me"
-  }
+  const mySelf = 'Me'
 
   if (!message) {
     return null;

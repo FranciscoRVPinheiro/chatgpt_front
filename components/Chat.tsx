@@ -3,7 +3,6 @@ import { useEffect, useState, useRef } from "react";
 import { Button } from "./Button";
 import { type Message, ChatLine, LoadingChatLine } from "./ChatLine";
 import { useCookies } from "react-cookie";
-import { useSession } from "next-auth/react";
 
 const COOKIE_NAME = "nextjs-ai-chat-gpt3";
 
@@ -61,8 +60,6 @@ export function Chat() {
   const [loading, setLoading] = useState(false);
   const [cookie, setCookie] = useCookies([COOKIE_NAME]);
 
-  const { data: session } = useSession();
-
   const containerRef = useRef(null);
   // scroll to bottom every new msg.
   useEffect(() => {
@@ -118,7 +115,7 @@ export function Chat() {
         className="rounded-2xl p-6 bg-neutral-900 max-h-full overflow-y-auto"
       >
         {messages.map(({ message, who }, index) => (
-          <ChatLine key={index} who={who} message={message} session={session} />
+          <ChatLine key={index} who={who} message={message} />
         ))}
 
         {loading && <LoadingChatLine />}
