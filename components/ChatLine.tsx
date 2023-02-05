@@ -1,6 +1,7 @@
 // @ts-nocheck
 import Balancer from "react-wrap-balancer";
 import { useSession } from "next-auth/react";
+import { getServerSession } from "next-auth";
 
 
 
@@ -27,7 +28,15 @@ const convertNewLines = (text: string) =>
     </span>
   ));
 
-export function ChatLine({ who = "bot", message }: Message) {
+export function ChatLine({ who = "bot", message, session }: Message) {
+
+  let mySelf;
+
+  if (session) {
+    mySelf = session.user.name
+  }else{
+    mySelf = "Me"
+  }
 
   if (!message) {
     return null;
@@ -47,7 +56,7 @@ export function ChatLine({ who = "bot", message }: Message) {
             <div className="flex space-x-5">
               <div className="flex-1 gap-4">
                 <p className="text-sm text-slate-300 font-mono">
-                  {who == "bot" ? "Jarvis" : "Me" }
+                  {who == "bot" ? "Jarvis" : mySelf }
                 </p>
                 <p className="text-white text-lg font-mono">
                   {formatteMessage}
