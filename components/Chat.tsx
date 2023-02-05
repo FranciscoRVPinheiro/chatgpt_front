@@ -16,15 +16,29 @@ export const initialMessages: Message[] = [
 
 const InputMessage = ({ input, setInput, sendMessage }: any) => {
   
-   const textInput = useRef(null);
+  const textInput = useRef(null);
+
+  useEffect(() => {
+    if (textInput.current) {
+      textInput.current.focus();
+    }
+  }, []);
 
    const isDisabled = input ? false : true
 
-   useEffect(() => {
-     if (textInput.current) {
-       textInput.current.focus();
-     }
-   }, []);
+   const cleanEnterInput = () => {
+      if (input.trim().length > 0) {
+          sendMessage(input);
+          setInput("");
+    }
+   }
+
+   const cleanButtonInput = () => {
+      if (input.trim().length > 0) {
+        sendMessage(input);
+        setInput("");
+      }
+   }
 
   return (
     <div className="mt-6 flex clear-both">
@@ -37,10 +51,7 @@ const InputMessage = ({ input, setInput, sendMessage }: any) => {
         value={input}
         onKeyDown={(e) => {
           if (e.key === "Enter") {
-            if (input.trim().length > 0) {
-            sendMessage(input);
-            setInput("");
-            }
+            cleanEnterInput();
           }
         }}
         onChange={(e) => {
@@ -52,10 +63,7 @@ const InputMessage = ({ input, setInput, sendMessage }: any) => {
           disabled={isDisabled}
           className="ml-4 flex-none font-mono"
           onClick={() => {
-             if (input.trim().length > 0) { 
-              sendMessage(input);
-              setInput("");
-             }
+            cleanButtonInput()
           }}
         >
           Send
