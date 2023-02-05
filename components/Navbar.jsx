@@ -30,7 +30,7 @@ export default function Navbar() {
               Jarvis
             </h1>
             <p className="text-white text-center font-mono text-sm ml-6">
-              Powered by <Link href="https://openai.com/blog/chatgpt/">ChatGPT-3</Link>
+              Powered by ChatGPT-3
             </p>
           </div>
           <div className="flex">
