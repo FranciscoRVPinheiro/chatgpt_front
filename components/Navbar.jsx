@@ -6,21 +6,23 @@ export default function Navbar() {
 
   const { data: session } = useSession();
 
-    let logged = session ?
+    let logged = session ? (
       <Link
         onClick={() => signOut()}
         href="/"
-        className="text-white font-mono flex pt-6 justify-center mr-3"
+        className="text-white font-mono text-sm flex pt-7 justify-center mr-2"
       >
         Logout
-      </Link> :
+      </Link>
+    ) : (
       <Link
         onClick={() => signIn()}
         href="/"
-        className="text-white font-mono flex pt-6 justify-center mr-6"
+        className="text-white font-mono text-sm flex pt-7 justify-center mr-4"
       >
         Login
       </Link>
+    );
 
     return (
       <>
