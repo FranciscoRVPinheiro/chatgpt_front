@@ -10,7 +10,7 @@ export type Message = {
 };
 
 export const LoadingChatLine = () => (
-  <div className="flex min-w-full animate-pulse px-4 mb-28">
+  <div className="flex min-w-full animate-pulse px-1 mb-10">
     <div className="text-white font-mono">Thinking...</div>
   </div>
 );
