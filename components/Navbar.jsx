@@ -25,12 +25,12 @@ export default function Navbar() {
     return (
       <>
         <nav className="flex justify-between bg-neutral-900 fixed top-0 pb-3 w-full">
-          <div className="pt-2 justify-center ">
-            <h1 className="text-2xl text-white text-center font-mono font-bold ml-5 ">
+          <div className="pt-4 justify-center ">
+            <h1 className="text-2xl text-white text-left font-mono font-bold ml-6">
               Jarvis
             </h1>
-            <p className="text-white text-center font-extralight font-mono text-sm ml-5">
-              Powered by Chatgpt-3
+            <p className="text-white text-center font-mono text-sm ml-6">
+              Powered by <Link href="https://openai.com/blog/chatgpt/">ChatGPT-3</Link>
             </p>
           </div>
           <div className="flex">
