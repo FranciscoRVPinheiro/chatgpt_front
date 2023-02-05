@@ -17,6 +17,8 @@ const InputMessage = ({ input, setInput, sendMessage }: any) => {
   
    const textInput = useRef(null);
 
+   const isDisabled = input ? false : true
+
    useEffect(() => {
      if (textInput.current) {
        textInput.current.focus();
@@ -43,15 +45,17 @@ const InputMessage = ({ input, setInput, sendMessage }: any) => {
         }}
       />
       <Button
-        type="submit"
-        className="ml-4 flex-none font-mono"
-        onClick={() => {
-          sendMessage(input);
-          setInput("");
-        }}
-      >
-        Send
+          type="submit"
+          disabled={isDisabled}
+          className="ml-4 flex-none font-mono"
+          onClick={() => {
+            sendMessage(input);
+            setInput("");
+          }}
+        >
+          Send
       </Button>
+      
     </div>
   );}
 
