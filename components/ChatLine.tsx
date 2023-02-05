@@ -30,7 +30,7 @@ export function ChatLine({ who = "bot", message }: Message) {
 
   const { data: session } = useSession();
 
-  let loggedIn = session ? session.user.name : "me"
+  let loggedIn = session ? session?.user?.name : "me"
  
   if (!message) {
     return null;
