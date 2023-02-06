@@ -15,7 +15,6 @@ export const initialMessages: Message[] = [
 ];
 
 const InputMessage = ({ input, setInput, sendMessage }: any) => {
-  
   const textInput = useRef(null);
 
   useEffect(() => {
@@ -24,21 +23,21 @@ const InputMessage = ({ input, setInput, sendMessage }: any) => {
     }
   }, []);
 
-   const isDisabled = input ? false : true
+  const isDisabled = input ? false : true;
 
-   const cleanEnterInput = () => {
-      if (input.trim().length > 0) {
-          sendMessage(input);
-          setInput("");
+  const cleanEnterInput = () => {
+    if (input.trim().length > 0) {
+      sendMessage(input);
+      setInput("");
     }
-   }
+  };
 
-   const cleanButtonInput = () => {
-      if (input.trim().length > 0) {
-        sendMessage(input);
-        setInput("");
-      }
-   }
+  const cleanButtonInput = () => {
+    if (input.trim().length > 0) {
+      sendMessage(input);
+      setInput("");
+    }
+  }; 
 
   return (
     <div className="mt-6 flex clear-both">
@@ -47,7 +46,7 @@ const InputMessage = ({ input, setInput, sendMessage }: any) => {
         type="text"
         aria-label="chat input"
         required
-        className="w-full flex-auto appearance-none rounded-md border border-indigo-600 bg-white px-3 py-[calc(theme(spacing.2)-1px)] shadow-md shadow-zinc-800/5 placeholder:text-white focus:border-indigo-600 focus:outline-none focus:ring-2 focus:ring-indigo-800 sm:text-sm"
+        className="w-full flex-auto appearance-none rounded-md border border-indigo-600 bg-slate-300 px-3 py-[calc(theme(spacing.2)-1px)] shadow-md shadow-zinc-800/5 focus:border-indigo-600 focus:outline-none focus:ring-2 focus:ring-indigo-800"
         value={input}
         onKeyDown={(e) => {
           if (e.key === "Enter") {
@@ -59,18 +58,18 @@ const InputMessage = ({ input, setInput, sendMessage }: any) => {
         }}
       />
       <Button
-          type="submit"
-          disabled={isDisabled}
-          className="ml-4 flex-none font-mono"
-          onClick={() => {
-            cleanButtonInput()
-          }}
-        >
-          Send
+        type="submit"
+        disabled={isDisabled}
+        className="ml-4 flex-none font-mono"
+        onClick={() => {
+          cleanButtonInput();
+        }}
+      >
+        Send
       </Button>
-      
     </div>
-  );}
+  );
+}
 
 export function Chat() {
 
