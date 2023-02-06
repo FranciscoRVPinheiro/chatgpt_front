@@ -41,8 +41,8 @@ export function ChatLine({ who = "bot", message }: Message) {
           <div
             className={
               who != "bot"
-                ? "float-right mb-10 rounded-tl-xl rounded-br-xl rounded-bl-xl py-2 px-3 ring-1 ring-indigo-600"
-                : "float-right mb-10 rounded-tr-xl rounded-br-xl rounded-bl-xl py-2 px-3 ring-1 ring-[#BB00A9]"
+                ? "float-right mb-10 rounded-tl-2xl rounded-br-2xl rounded-bl-2xl py-2 px-3 ring-1 ring-indigo-600"
+                : "float-right mb-10 rounded-tr-2xl rounded-br-2xl rounded-bl-2xl py-2 px-3 ring-1 ring-[#BB00A9]"
             }
           >
             <div className="flex space-x-5">
