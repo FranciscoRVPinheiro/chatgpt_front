@@ -131,12 +131,12 @@ export function Chat() {
     <>
       <div
         ref={containerRef}
-        className="rounded-2xl p-6 bg-neutral-900 max-h-full overflow-y-auto"
+        className="p-6 bg-neutral-900 max-h-full overflow-y-auto"
       >
         {messages.map(({ message, who }, index) => (
           <ChatLine key={index} who={who} message={message} />
         ))}
-        
+
         {loading && <LoadingChatLine />}
       </div>
 

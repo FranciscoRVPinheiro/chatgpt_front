@@ -22,6 +22,7 @@ export default function Navbar() {
       >
         Login
       </Link>
+      // bg-neutral-900
     );
 
     return (
@@ -37,7 +38,7 @@ export default function Navbar() {
           </div>
           <div className="flex">
             {logged}
-            <div className="mr-4 mt-6">
+            <div className="pr-6 mt-6">
               {session ? (
                 <Image
                   width="25"
