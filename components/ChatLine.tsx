@@ -50,8 +50,8 @@ export function ChatLine({ who = "bot", message }: Message) {
                 <p
                   className={
                     who == "bot"
-                      ? "text-sm text-slate-300 font-mono flex justify-start"
-                      : "text-sm text-slate-300 font-mono flex justify-end"
+                      ? "text-sm text-slate-300  font-mono flex justify-start"
+                      : "text-sm text-slate-300  font-mono flex justify-end"
                   }
                 >
                   {who == "bot" ? "Jarvis" : mySelf}
