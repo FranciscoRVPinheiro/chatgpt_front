@@ -3,7 +3,7 @@ import { Chat } from "../components/Chat";
 import Head from "../components/Head";
 
 export default function Home() {
-  // bg-neutral-900
+
   return (
     <>
       <Head />

@@ -1,8 +1,8 @@
 // @ts-nocheck
-import Balancer from "react-wrap-balancer";
+// import Balancer from "react-wrap-balancer";
 
 // wrap Balancer to remove type errors :( - @TODO - fix this ugly hack
-const BalancerWrapper = (props: any) => <Balancer {...props} />;
+// const BalancerWrapper = (props: any) => <Balancer {...props} />;
 
 
 export type Message = {
@@ -28,16 +28,13 @@ export function ChatLine({ who = "bot", message }: Message) {
 
   const formatteMessage = convertNewLines(message);
 
-  // rounded-lg
-
   return (
     <>
       <div
         className={
           who != "bot" ? "float-right clear-both" : "float-left clear-both"
-        }
-      >
-        <BalancerWrapper>
+        }>
+        {/* <BalancerWrapper> */}
           <div
             className={
               who != "bot"
@@ -62,7 +59,7 @@ export function ChatLine({ who = "bot", message }: Message) {
               </div>
             </div>
           </div>
-        </BalancerWrapper>
+        {/* </BalancerWrapper> */}
       </div>
     </>
   );
