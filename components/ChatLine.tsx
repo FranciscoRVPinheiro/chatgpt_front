@@ -8,9 +8,9 @@ export function ChatLine({ who = "bot", message }: Message) {
   if (!message) {
     return null;
   }
-
+  // names that will show on chat bubbles
   let mySelf = "Me";
-  let botName = "Jarvis"
+  let botName = "Jarvis";
 
   // util helper to convert new lines to <br /> tags
   const convertNewLines = (text: string) =>
@@ -27,7 +27,9 @@ export function ChatLine({ who = "bot", message }: Message) {
     <>
       <div
         className={
-          who != "bot" ? "float-right clear-both" : "float-left clear-both"
+          who != "bot"
+            ? "float-right clear-both font-mono text-xs text-slate-300"
+            : "float-left clear-both font-mono text-xs text-slate-300"
         }
       >
         <div
@@ -41,14 +43,12 @@ export function ChatLine({ who = "bot", message }: Message) {
             <div className="flex-1 gap-4">
               <p
                 className={
-                  who == "bot"
-                    ? "text-xs text-slate-300  font-mono flex justify-start"
-                    : "text-xs text-slate-300  font-mono flex justify-end"
+                  who == "bot" ? "flex justify-start" : "flex justify-end"
                 }
               >
                 {who == "bot" ? botName : mySelf}
               </p>
-              <p className="text-white text-lg font-mono">{formatteMessage}</p>
+              <p className="text-white text-lg">{formatteMessage}</p>
             </div>
           </div>
         </div>

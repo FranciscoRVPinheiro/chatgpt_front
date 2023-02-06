@@ -22,7 +22,6 @@ export default function Navbar() {
       >
         Login
       </Link>
-      // bg-neutral-900
     );
 
     return (
