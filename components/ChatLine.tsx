@@ -5,11 +5,12 @@ export type Message = {
 };
 
 export function ChatLine({ who = "bot", message }: Message) {
+  
   if (!message) {
     return null;
   }
   // names that will show on chat bubbles
-  let mySelf = "Me";
+  let firstName = "Me";
   let botName = "Jarvis";
 
   // util helper to convert new lines to <br /> tags
@@ -46,7 +47,7 @@ export function ChatLine({ who = "bot", message }: Message) {
                   who == "bot" ? "flex justify-start" : "flex justify-end"
                 }
               >
-                {who == "bot" ? botName : mySelf}
+                {who == "bot" ? botName : firstName}
               </p>
               <p className="text-white text-lg">{formatteMessage}</p>
             </div>
