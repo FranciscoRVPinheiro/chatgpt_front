@@ -10,7 +10,7 @@ export function ChatLine({ who = "bot", message }: Message) {
     return null;
   }
   // names that will show on chat bubbles
-  let firstName = "Me"
+  let firstName = ""
   let botName = "Jarvis";
 
   // util helper to convert new lines to <br /> tags
@@ -36,8 +36,8 @@ export function ChatLine({ who = "bot", message }: Message) {
         <div
           className={
             who != "bot"
-              ? "float-right mb-10 rounded-tl-2xl rounded-br-2xl rounded-bl-2xl py-2 px-4 ring-1 ring-indigo-600"
-              : "float-right mb-10 rounded-tr-2xl rounded-br-2xl rounded-bl-2xl py-2 px-4 ring-1 ring-[#BB00A9]"
+              ? "float-right mb-10 rounded-tr-2xl rounded-tl-2xl rounded-bl-2xl py-2 px-4 ring-1 ring-indigo-600"
+              : "float-right mb-10 rounded-tl-2xl rounded-tr-2xl rounded-br-2xl py-2 px-4 ring-1 ring-[#BB00A9]"
           }
         >
           <div className="flex space-x-5">

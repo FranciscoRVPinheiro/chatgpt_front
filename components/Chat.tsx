@@ -15,6 +15,7 @@ export const initialMessages: Message[] = [
 ];
 
 const InputMessage = ({ input, setInput, sendMessage }: any) => {
+  
   const textInput = useRef(null);
 
   useEffect(() => {
@@ -23,19 +24,12 @@ const InputMessage = ({ input, setInput, sendMessage }: any) => {
     }
   }, []);
 
-  const cleanEnterInput = () => {
+  const cleanInput = () => {
     if (input.trim().length > 0) {
       sendMessage(input);
       setInput("");
     }
   };
-
-  const cleanButtonInput = () => {
-    if (input.trim().length > 0) {
-      sendMessage(input);
-      setInput("");
-    }
-  }; 
 
   return (
     <div className="mt-6 flex clear-both">
@@ -48,7 +42,7 @@ const InputMessage = ({ input, setInput, sendMessage }: any) => {
         value={input}
         onKeyDown={(e) => {
           if (e.key === "Enter") {
-            cleanEnterInput();
+            cleanInput();
           }
         }}
         onChange={(e) => {
@@ -59,7 +53,7 @@ const InputMessage = ({ input, setInput, sendMessage }: any) => {
         type="submit"
         className="ml-4 flex-none"
         onClick={() => {
-          cleanButtonInput();
+          cleanInput();
         }}
       >
         <svg
