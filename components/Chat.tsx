@@ -41,7 +41,7 @@ const InputMessage = ({ input, setInput, sendMessage }: any) => {
     <div className="mt-6 flex clear-both">
       <input
         ref={textInput}
-        type="text"
+        type="search"
         aria-label="chat input"
         required
         className="w-full flex-auto appearance-none rounded-md border border-indigo-600 bg-slate-300 px-3 py-[calc(theme(spacing.2)-1px)] focus:border-indigo-600 focus:outline-none focus:ring-2 focus:ring-indigo-800"
