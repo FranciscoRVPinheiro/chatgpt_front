@@ -3,7 +3,7 @@ export type Message = {
   who: "bot" | "user" | undefined;
   message?: string;
 };
-// chatgpt-front-chi.vercel.app
+
 export function ChatLine({ who = "bot", message }: Message) {
 
   if (!message) {

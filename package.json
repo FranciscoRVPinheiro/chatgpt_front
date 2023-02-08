@@ -1,5 +1,5 @@
 {
-  "repository": "https://github.com/vercel/examples.git",
+  "repository": "https://github.com/FranciscoRVPinheiro/chatgpt_front",
   "license": "MIT",
   "private": true,
   "scripts": {
@@ -16,8 +16,7 @@
     "next-pwa": "^5.6.0",
     "react": "latest",
     "react-cookie": "^4.1.1",
-    "react-dom": "latest",
-    "react-wrap-balancer": "^0.1.5"
+    "react-dom": "latest"
   },
   "devDependencies": {
     "@types/node": "^17",
