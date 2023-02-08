@@ -3,14 +3,14 @@ export type Message = {
   who: "bot" | "user" | undefined;
   message?: string;
 };
-
+// chatgpt-front-chi.vercel.app
 export function ChatLine({ who = "bot", message }: Message) {
-  
+
   if (!message) {
     return null;
   }
   // names that will show on chat bubbles
-  let firstName = "Me";
+  let firstName = "Me"
   let botName = "Jarvis";
 
   // util helper to convert new lines to <br /> tags
