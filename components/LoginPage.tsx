@@ -1,4 +1,5 @@
 import { useSession } from "next-auth/react";
+import Spinner from "./Spinner";
 
 export default function LoginPage() {
    
@@ -6,9 +7,9 @@ export default function LoginPage() {
 
   return (
     <div className="flex justify-center items-center h-screen bg-neutral-900">
-      <p className="text-white font-mono text-xl animate-pulse">
-        {status === "loading" ? "" : "Login to use Jarvis"}
-      </p>
+      <div className="text-white font-mono text-xl animate-pulse">
+        {status === "loading" ? <Spinner /> : "Login to use Jarvis"}
+      </div>
     </div>
   );
 }

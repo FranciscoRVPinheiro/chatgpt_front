@@ -9,7 +9,7 @@ export default function Home() {
   const { data: session } = useSession();
 
   return (
-    <>  
+    <>
       <Head />
       <div className="bg-neutral-900 justify-end flex flex-col h-screen">
         <div className="pt-16 max-h-full">
