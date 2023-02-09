@@ -15,7 +15,7 @@ export const initialMessages: Message[] = [
 ];
 
 const InputMessage = ({ input, setInput, sendMessage }: any) => {
-  
+
   const textInput = useRef(null);
 
   useEffect(() => {
