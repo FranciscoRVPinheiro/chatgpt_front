@@ -1,5 +1,5 @@
 // @ts-nocheck
-
+import { useSession } from "next-auth/react";
 
 export type Message = {
   who: "bot" | "user" | undefined;
@@ -27,9 +27,6 @@ export function ChatLine({ who = "bot", message }: Message) {
 
   const formatteMessage = convertNewLines(message);
 
-            //   ? "float-right clear-both font-mono text-xs text-slate-300"
-            // : "float-left clear-both font-mono text-xs text-slate-300"
-
   return (
     <>
       <div
@@ -42,8 +39,8 @@ export function ChatLine({ who = "bot", message }: Message) {
         <div
           className={
             who != "bot"
-              ? "float-right mb-10 rounded-2xl rounded-br-none py-2 px-4 ring-1 ring-indigo-600"
-              : "float-right mb-10 rounded-2xl rounded-bl-none py-2 px-4 ring-1 ring-[#BB00A9]"
+              ? "mb-10 rounded-2xl rounded-br-none py-2 px-4 ring-1 ring-indigo-600"
+              : "mb-10 rounded-2xl rounded-bl-none py-2 px-4 ring-1 ring-[#BB00A9]"
           }
         >
           <div className="flex space-x-5">
