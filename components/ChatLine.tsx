@@ -1,4 +1,6 @@
 // @ts-nocheck
+
+
 export type Message = {
   who: "bot" | "user" | undefined;
   message?: string;
@@ -9,6 +11,7 @@ export function ChatLine({ who = "bot", message }: Message) {
   if (!message) {
     return null;
   }
+
   // names that will show on chat bubbles
   let firstName = ""
   let botName = "Jarvis";
@@ -24,13 +27,16 @@ export function ChatLine({ who = "bot", message }: Message) {
 
   const formatteMessage = convertNewLines(message);
 
+            //   ? "float-right clear-both font-mono text-xs text-slate-300"
+            // : "float-left clear-both font-mono text-xs text-slate-300"
+
   return (
     <>
       <div
         className={
           who != "bot"
-            ? "float-right clear-both font-mono text-xs text-slate-300"
-            : "float-left clear-both font-mono text-xs text-slate-300"
+            ? "flex justify-end font-mono text-xs text-slate-300"
+            : "flex justify-start font-mono text-xs text-slate-300"
         }
       >
         <div
@@ -41,7 +47,7 @@ export function ChatLine({ who = "bot", message }: Message) {
           }
         >
           <div className="flex space-x-5">
-            <div className="flex-1 gap-4">
+            <div className="flex-1 gap-4 ">
               <p
                 className={
                   who == "bot" ? "flex justify-start" : "flex justify-end"

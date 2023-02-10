@@ -8,7 +8,7 @@ export default function LoginPage() {
   return (
     <div className="flex justify-center items-center h-screen bg-neutral-900">
       <div className="text-white font-mono text-xl animate-pulse">
-        {status === "loading" ? <Spinner /> : "Login to use Jarvis"}
+        {status === "loading" ? <Spinner /> : "Login to begin."}
       </div>
     </div>
   );
